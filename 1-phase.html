@@ -3,28 +3,59 @@
 <head>
   
   <title>Electrical Motors</title>
-   <style>
+    <style>
+
+  
+
+
+
 h1 a {color : Black;}
 h1{text-align :center;}
 
 
 img{width : 400px;height :250px;}
 
-nav ul li {margin : 20px; }
-li a { color : red;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
  footer{ text-align : center;}
  h1 span a{
     display: block;
 }
+body{
+background-color : PowderBlue;}
 
-
-ul li a  {
-  background-color: #dddddd;}
-
-  
-ul   {
-  background-color: aqua;
+main img {
+display: block;
+margin-left: auto;
+margin-right: auto;
 }
+
+
+
+ 
+
 
 
   </style>
@@ -43,20 +74,37 @@ ul   {
     
     
 
-      <nav>
-      <ul>
-        <li>
-          <a href="3-phase.html">3-Phases Motors</a>
-        </li>
-      </ul>
-    </nav>
-    <nav>
-      <ul>
-        <li>
-          <a href="1-phase.html">1-Phase Motors</a>
-        </li>
-      </ul>
-    </nav>
+      <div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>Menu</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li><a href="3-phase.html">3-Phases Motors</a></li>
+      <li><a href="1-phase.html">1-Phase Motor</a></li>
+      <li><a href="DC.html">DC Motors</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      
+      
+    </ul>
+  </div>
+  
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
 
 
 
@@ -76,20 +124,6 @@ ul   {
 
 
 
-    <nav>
-      <ul>
-        <li>
-          <a href="DC.html">DC Motors</a>
-        </li>
-      </ul>
-    </nav>
-    <nav>
-      <ul>
-        <li>
-          <a href="contact.html">Contact Us</a>
-        </li>
-      </ul>
-    </nav>
   </header>
 
  <footer><p>copyright©Ibrahim-Khdairat@2021</p></footer>
