@@ -1,16 +1,22 @@
 var username = prompt ('Welcome to my page , Please Enter Your Name !!');
-alert ('Welcom  ' + username);
 
-var age = prompt ( 'Please Enter Your Age  !!');
+alert ('Welcome  ' + username);
 
-if (age>=15)
-{
-  alert (' WELCOM :)'  );
-}
+ var age = prompt ( 'Please Enter Your Age  !!');
 
-else
+
+ if (age>=15)
  {
-   
-   alert ('This content is dangerous , and we are not responsible for any injury caused by a wrong use of the content ....!!! ')
-
+   alert (' WELCOME :)'  );
  }
+
+ else
+  {
+   
+  alert ('This content is dangerous , and we are not responsible for any injury caused by a wrong use of the content ....!!! ')
+
+  }
+
+
+  
+ 
