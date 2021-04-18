@@ -24,7 +24,7 @@ alert ('Welcome  ' + userName());
 
 function motor()
 {
-    var m = prompt ('Please Enter the type you want to see it (3 phase , 1 phase , dc )'); 
+    var m = prompt ('Please Enter the type you want to see it (3 phase , 1 phase , dc )');
     return m;
 }
   
@@ -62,6 +62,7 @@ else if (type =='dc')
 {
 var image ='<img src="https://www.wellpcb.com/sites/default/files/1_195.jpg" alt ="motor"/>'
   document.write(image);
+  
 }
 
 
