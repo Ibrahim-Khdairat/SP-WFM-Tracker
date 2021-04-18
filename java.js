@@ -24,7 +24,7 @@ alert ('Welcome  ' + userName());
 
 function motor()
 {
-    var m = prompt ('Please Enter the type you want to see it (3 phase , 1 phase , dc )');
+    var m = prompt ('Please Enter the type you want to see it (3 phase , 1 phase , dc )'); 
     return m;
 }
   
