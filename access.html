@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Template</title>
+    <link rel="icon" href="phone.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body>
+    <div id="nav">
+        <a href="access.html">Access Template</a>
+        <a href="core.html">Core Template</a>
+        <a href="digital.html">Digital Template</a>
+    </div>
+    <form>
+        <h2>Impacted Services</h2>
+        <lable>FTTH: </lable>
+        <input type="number" id="noOfFtth" placeholder="No. Of FTTH">
+        <lable>ADSL: </lable>
+        <input type="number" id="noOfAdsl" placeholder="No. Of ADFSL">
+        <lable>PSTN: </lable>
+        <input type="number" id="noOfPstn" placeholder="No. Of PSTN">
+        <lable>EBU: </lable>
+        <input type="number" id="noOfEbu" placeholder="No. Of EBU">
+        <lable>Mobile Sites: </lable>
+        <input type="number" id="noOfMobile" placeholder="No. Of Mobile Sites">
+
+        <h2>Impacted Area</h2>
+        <label for="locationInput">Location: </label>
+        <input type="text" id="locationInput"><br>
+
+        <h2>Impacted Node</h2>
+        <lable>DSLAM: </lable>
+        <input type="text" id="nameOfDslam" placeholder="DSLAN Code">
+        <lable>GPON: </lable>
+        <input type="text" id="nameOfGpon" placeholder="GPON Code">
+        <lable>RLU: </lable>
+        <input type="text" id="nameOfRlu" placeholder="RLU Code">
+        <h2>Root Cause</h2>
+        <lable>Root Cause: </lable>
+        <input type="text" id="nameOfRootCause" placeholder="Root Cause">
+
+        <div id="flexed">
+            <div>
+                <h2>Incident Update</h2>
+                <lable>Update: </lable>
+                <input type="text" id="incidentUpdateInput" placeholder="Incident Update">
+            </div>
+            <div id="template">
+                <span id="impactedServicesOutput"></span> down in <span id="areaImpactedOutput"></span><br>
+                <span id="impactedNodeOutput"></span> Isolated due to <span id="rootCauseOutput">Issue</span>
+                <br><br>
+                <span id="incidentUpdate"></span>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <button type="button" onclick="updateTemplate()">Generate Template</button>
+    </form>
+    <script>
+        function updateTemplate() {
+            /* Impacted Services */
+            const adsl = document.getElementById('noOfAdsl').value;
+            const ftth = document.getElementById('noOfFtth').value;
+            const pstn = document.getElementById('noOfPstn').value;
+            const ebu = document.getElementById('noOfEbu').value;
+            const mobile = document.getElementById('noOfMobile').value;
+
+            /* Impacted Area */
+            const area = document.getElementById('locationInput').value;
+
+            /* Impacted Node */
+            const dslam = document.getElementById('nameOfDslam').value;
+            const gpon = document.getElementById('nameOfGpon').value;
+            const rlu = document.getElementById('nameOfRlu').value;
+            debugger;
+
+            /*Root Cuase*/
+            const rootCauseInput = document.getElementById('nameOfRootCause').value;
+            /*Incident Update*/
+            const incidentUpdate = document.getElementById('incidentUpdateInput').value;
+
+
+            const impactedServices = document.getElementById('impactedServicesOutput');
+            const areaImpacted = document.getElementById('areaImpactedOutput');
+            const impactedNode = document.getElementById('impactedNodeOutput');
+            const rootCause = document.getElementById('rootCauseOutput');
+            const update = document.getElementById('incidentUpdate');
+
+            /*Fill the impacted*/
+            var concatedImpactedServices = "";
+            if (adsl != 0) (
+                concatedImpactedServices += ` ${adsl} ADSL, `
+            )
+            if (ftth != 0) (
+                concatedImpactedServices += ` ${ftth} FTTH, `
+            )
+            if (pstn != 0) (
+                concatedImpactedServices += ` ${pstn} PSTN, `
+            )
+            if (ebu != 0) (
+                concatedImpactedServices += ` ${ebu} EBU, `
+            )
+            if (mobile != 0) (
+                concatedImpactedServices += ` ${mobile} Mobile Sites `
+            )
+
+            /*Fill the nodes*/
+            var concatedImpactedNode = "";
+            if (dslam != 0) (
+                concatedImpactedNode += ` ${dslam} DSLAM, `
+            )
+            if (gpon != 0) (
+                concatedImpactedNode += ` ${gpon} GPON, `
+            )
+            if (rlu != 0) (
+                concatedImpactedNode += ` ${rlu} RLU `
+            )
+            debugger;
+
+            impactedServices.textContent = concatedImpactedServices;
+            areaImpacted.textContent = area;
+            impactedNode.textContent = concatedImpactedNode;
+            rootCause.textContent = rootCauseInput;
+            if (incidentUpdate!="") (
+                update.textContent = "Update: " + incidentUpdate
+            )
+            debugger;
+
+        }
+    </script>
+</body>
+
+</html>

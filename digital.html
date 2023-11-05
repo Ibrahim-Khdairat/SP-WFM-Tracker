@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Template</title>
+    <link rel="icon" href="phone.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body>
+    <div id="nav">
+        <a href="access.html">Access Template</a>
+        <a href="core.html">Core Template</a>
+        <a href="digital.html">Digital Template</a>
+    </div>
+    <form>
+        <h2>Impacted Services</h2>
+        <lable>Service/s Name</lable>
+        <textarea type="text" id="impactedServicesBox" placeholder="List of impacted services"></textarea>
+
+        <br>
+        <h2>Root Cause</h2>
+        <lable>Root Cause: </lable>
+        <input type="text" id="nameOfRootCause" placeholder="Root Cause">
+        <br><br>
+        <div id="flexed">
+            <div>
+                <h2>Incident Update</h2>
+                <lable>Update: </lable>
+                <input type="text" id="incidentUpdateInput" placeholder="Incident Update">
+            </div>
+            <div id="template">
+                <span id="impactedServicesOutput"></span>
+                <br>
+                <br>
+                <span id="rootCauseOutput"></span>
+                <br>
+                <br>
+                <span id="incidentUpdate"></span>
+                
+            </div>
+        </div>
+        <br>
+        <br>
+        <button type="button" onclick="updateTemplate()">Generate Template</button>
+    </form>
+
+
+    <script>
+        function updateTemplate() {
+            /* Impacted Services */
+            const listOfImpacted = document.getElementById('impactedServicesBox').value;
+
+
+            /*Root Cuase*/
+            const rootCauseInput = document.getElementById('nameOfRootCause').value;
+            /*Incident Update*/
+            const incidentUpdate = document.getElementById('incidentUpdateInput').value;
+
+
+            const impactedServices = document.getElementById('impactedServicesOutput');
+            const rootCause = document.getElementById('rootCauseOutput');
+            const update = document.getElementById('incidentUpdate');
+
+
+            impactedServices.textContent = listOfImpacted;
+            if (rootCauseInput) (
+
+                rootCause.textContent = "Root Cause: " + rootCauseInput
+            )
+
+            if(incidentUpdate){
+                update.textContent = "Update: "+incidentUpdate
+            }
+        }
+    </script>
+</body>
+
+</html>
