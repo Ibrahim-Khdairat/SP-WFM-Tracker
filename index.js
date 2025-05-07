@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // removeButton.textContent = "Remove";
             // removeButton.classList.add("remove-btn");
             // removeButton.addEventListener("click", () => removeMember(member.id)); // Pass Firestore ID
-            // memberHeader.appendChild(nameHeading);
+            memberHeader.appendChild(nameHeading);
             // memberHeader.appendChild(removeButton);
 
             // Weekly Schedule Grid (Detailed)
