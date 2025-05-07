@@ -161,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             await memberRef.update(updateData);
-            console.log(`Status updated for ${memberId} on ${day} to ${newStatus}`);
             // UI will update automatically via the onSnapshot listener
         } catch (error) {
             console.error("Error updating status: ", error);
@@ -185,7 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
                 await teamCollection.add(newMember);
-                console.log(`Member ${name} added.`);
                 newMemberNameInput.value = ""; // Clear input
                 // UI will update automatically via the onSnapshot listener
             } catch (error) {
@@ -202,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //     if (confirm("Are you sure you want to remove this member and their schedule?")) {
     //         try {
     //             await teamCollection.doc(memberId).delete();
-    //             console.log(`Member ${memberId} removed.`);
     //             // UI will update automatically via the onSnapshot listener
     //         } catch (error) {
     //             console.error("Error removing member: ", error);
@@ -218,7 +215,6 @@ document.addEventListener("DOMContentLoaded", () => {
         snapshot.forEach(doc => {
             team.push({ id: doc.id, ...doc.data() });
         });
-        console.log("Data fetched/updated from Firestore:", team);
         renderSummaryTable(team);
         renderDetailedSchedules(team);
     }, error => {
