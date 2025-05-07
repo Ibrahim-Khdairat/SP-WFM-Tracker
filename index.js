@@ -97,12 +97,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const nameHeading = document.createElement("h3");
             nameHeading.classList.add("member-name");
             nameHeading.textContent = member.name;
-            const removeButton = document.createElement("button");
-            removeButton.textContent = "Remove";
-            removeButton.classList.add("remove-btn");
-            removeButton.addEventListener("click", () => removeMember(member.id)); // Pass Firestore ID
-            memberHeader.appendChild(nameHeading);
-            memberHeader.appendChild(removeButton);
+            // const removeButton = document.createElement("button");
+            // removeButton.textContent = "Remove";
+            // removeButton.classList.add("remove-btn");
+            // removeButton.addEventListener("click", () => removeMember(member.id)); // Pass Firestore ID
+            // memberHeader.appendChild(nameHeading);
+            // memberHeader.appendChild(removeButton);
 
             // Weekly Schedule Grid (Detailed)
             const weeklyScheduleGrid = document.createElement("div");
@@ -198,18 +198,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Function to remove a member from Firestore
-    async function removeMember(memberId) {
-        if (confirm("Are you sure you want to remove this member and their schedule?")) {
-            try {
-                await teamCollection.doc(memberId).delete();
-                console.log(`Member ${memberId} removed.`);
-                // UI will update automatically via the onSnapshot listener
-            } catch (error) {
-                console.error("Error removing member: ", error);
-                alert("Failed to remove member. Please try again.");
-            }
-        }
-    }
+    // async function removeMember(memberId) {
+    //     if (confirm("Are you sure you want to remove this member and their schedule?")) {
+    //         try {
+    //             await teamCollection.doc(memberId).delete();
+    //             console.log(`Member ${memberId} removed.`);
+    //             // UI will update automatically via the onSnapshot listener
+    //         } catch (error) {
+    //             console.error("Error removing member: ", error);
+    //             alert("Failed to remove member. Please try again.");
+    //         }
+    //     }
+    // }
 
     // --- Real-time Listener --- 
     // Listen for changes in the teamMembers collection
